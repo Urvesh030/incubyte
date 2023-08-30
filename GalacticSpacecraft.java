@@ -1,3 +1,4 @@
+import java.util.*;
 public class GalacticSpacecraft {
     private int x, y, z;
     private char direction;
@@ -90,13 +91,13 @@ public class GalacticSpacecraft {
     }
 
     public void turnUp() {
-        if (direction == 'N' || direction == 'S'|| direction=='W'|| direction=='E') {
+        if (direction == 'N' || direction == 'S'|| direction == 'W' || direction == 'E') {
             direction = 'U';
         }
     }
 
     public void turnDown() {
-        if (direction == 'N' || direction == 'S' ||direction=='W'|| direction=='E') {
+        if (direction == 'N' || direction == 'S'|| direction == 'W' || direction == 'E') {
             direction = 'D';
         }
     }
@@ -129,16 +130,34 @@ public class GalacticSpacecraft {
     }
 
     public static void main(String[] args) {
-       int  x =0, y = 0, z = 0;
-       char  direction = 'N';
-        char[] commands = {'f', 'r', 'u','b','l' };
-
+     
+       
+        // char[] commands = {'f', 'r', 'u', 'b', 'l'};
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the intial value of x :");
+        int x=sc.nextInt();
+        System.out.println("Enter the intial value of y:");
+        int y=sc.nextInt();
+        System.out.println("Enter the intial value of z:");
+        int z=sc.nextInt();
+        System.out.println("Enter the intial value of direction:");
+        char direction =sc.next().charAt(0);
+       
+        System.out.println("Enter the commands");
+        
+        char[] commands=new char[20];
+        char i=sc.next().charAt(0);
+        int n=0;
+       while(i=='f'||i=='b'||i=='r'||i=='l'||i=='u'||i=='d') {
+            commands[n]=i;
+            i=sc.next().charAt(0);
+            n++;
+        }
         GalacticSpacecraft Chandrayaan_3 = new GalacticSpacecraft(x,y,z,direction);
-        Chandrayaan_3 .executeCommands(commands);
+        Chandrayaan_3.executeCommands(commands);
 
-        System.out.println("Final Position: (" + Chandrayaan_3 .x + ", " + Chandrayaan_3 .y + ", " + Chandrayaan_3 .z + ")");
-        System.out.println("Final Direction: " + Chandrayaan_3 .direction);
+        System.out.println("Final Position: (" + Chandrayaan_3.x + ", " + Chandrayaan_3.y + ", " + Chandrayaan_3.z + ")");
+        System.out.println("Final Direction: " + Chandrayaan_3.direction);
     }
 }
-
 
