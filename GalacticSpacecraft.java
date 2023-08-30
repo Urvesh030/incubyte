@@ -132,7 +132,7 @@ public class GalacticSpacecraft {
     public static void main(String[] args) {
      
        
-        // char[] commands = {'f', 'r', 'u', 'b', 'l'};
+        
         Scanner sc =new Scanner(System.in);
         System.out.println("Enter the intial value of x :");
         int x=sc.nextInt();
